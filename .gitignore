@@ -1,0 +1,5 @@
+#ignora tutte le immagini nella root
+/*.jpg
+/*.png
+/*.jpeg
+
