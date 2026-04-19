@@ -3,3 +3,12 @@
 /*.png
 /*.jpeg
 
+#file .root generati
+/*.root
+
+#file generati da compilazione Aclic
+/*.pcm
+/*.d
+/*.so
+
+

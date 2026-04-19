@@ -11,6 +11,7 @@
 #include <TH1D.h>
 #include <TF1.h>
 #include <TCanvas.h>
+#include <TGraph.h>
 #include <TGraphErrors.h>
 #include <TPaveText.h>
 #include <TLegend.h>
@@ -32,9 +33,9 @@ std::vector<double> H_Fit(const char* treename, const char* path, int kw){
 
     ROOT::RDataFrame df(treename, path);
 
-    auto new_df = df.Define("dt_12", [](ROOT::RVecF a){ return a[0] - a[1]; }, {"DropTime"})
-                    .Define("dt_13", [](ROOT::RVecF a){ return a[0] - a[2]; }, {"DropTime"})
-                    .Define("dt_23", [](ROOT::RVecF a){ return a[1] - a[2]; }, {"DropTime"});
+    auto new_df = df.Define("dt_12", [](ROOT::RVecF a){ return a[0] - a[1]; }, {"CFT"})
+                    .Define("dt_13", [](ROOT::RVecF a){ return a[0] - a[2]; }, {"CFT"})
+                    .Define("dt_23", [](ROOT::RVecF a){ return a[1] - a[2]; }, {"CFT"});
 
     auto h_12 = new_df.Histo1D({"dt12", "Differenze temporali 01-02", 100, -20, 20}, "dt_12");
     auto h_13 = new_df.Histo1D({"dt13", "Differenze temporali 01-03", 100, -20, 20}, "dt_13");
@@ -44,17 +45,13 @@ std::vector<double> H_Fit(const char* treename, const char* path, int kw){
     auto h13 = h_13.GetValue();
     auto h23 = h_23.GetValue();
 
-    TCanvas* C = new TCanvas(treename, treename, 800, 600);
-
-    h12.Draw();
-    h13.Draw("SAME");
-    h23.Draw("SAME");
-
-    C->SaveAs(Form("%s.png", treename));
-
     std::vector<TH1D*> h_v = {h_12.GetPtr(), h_13.GetPtr(), h_23.GetPtr()};
 
-    TF1 *f = new TF1("f", "breitwigner", -20, 20);
+    double min = h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()) - 2* h_v[kw]->GetStdDev();
+    
+    double max = h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()) + 2* h_v[kw]->GetStdDev();
+
+    TF1 *f = new TF1("f", "breitwigner", min, max);
 
     f->SetParameters(h_v[kw]->GetMaximum(), h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()), h_v[kw]->GetStdDev());
 
@@ -112,7 +109,7 @@ void Lin_Fit(const char* path, const char* out){
 
     Points &line_to_fit12 = Lines[0];
 
-    c_mean12->Divide(1,2);
+    c_mean12->Divide(1,2,0,0);
 
     c_mean12->cd(1);
 
@@ -127,6 +124,9 @@ void Lin_Fit(const char* path, const char* out){
     g_mean12->Fit("pol1");
     TF1* f12 = g_mean12->GetFunction("pol1");
 
+    g_mean12->GetXaxis()->SetTitle("");
+    g_mean12->GetXaxis()->SetLabelSize(0);
+
     g_mean12->Draw("AP");
 
     c_mean12->Clear();
@@ -134,6 +134,7 @@ void Lin_Fit(const char* path, const char* out){
 
     c_mean12->cd(1);
     gPad->SetPad(0, 0.3, 1, 1);
+    gPad->SetTopMargin(0.02);
     gPad->SetBottomMargin(0.02);
 
     g_mean12->Draw("AP");
@@ -146,8 +147,8 @@ void Lin_Fit(const char* path, const char* out){
     pt->SetTextAlign(12); 
 
     pt->AddText(Form("Parametri di fit:"));
-    pt->AddText(Form("c : %.3f +/- %.3f cm/ns", f12->GetParameter(1), f12->GetParError(1)));
-    pt->AddText(Form("q : %.3f +/- %.3f cm", f12->GetParameter(0), f12->GetParError(0)));
+    pt->AddText(Form("m : %.2f +/- %.2f cm/ns", f12->GetParameter(1), f12->GetParError(1)));
+    pt->AddText(Form("q : %.1f +/- %.1f cm", f12->GetParameter(0), f12->GetParError(0)));
 
     pt->Draw();
 
@@ -162,11 +163,10 @@ void Lin_Fit(const char* path, const char* out){
 
     for (size_t i = 0; i < x.size(); i++) {
         double fit_val = f12->Eval(line_to_fit12.mean[i]);
-        residui[i] = x[i] - fit_val;   // y - fit(x)
-        residui_err[i] = dx[i];        // errore su y
+        residui[i] = x[i] - fit_val; 
+        residui_err[i] = dx[i];       
     }
 
-    // Grafico residui
     TGraphErrors* g_res = new TGraphErrors(
         x.size(),
         line_to_fit12.mean.data(),
@@ -180,7 +180,6 @@ void Lin_Fit(const char* path, const char* out){
 
     g_res->Draw("AP");
 
-    // Linea a zero
     TF1* zero = new TF1("zero", "0", 
         *std::min_element(line_to_fit12.mean.begin(), line_to_fit12.mean.end()),
         *std::max_element(line_to_fit12.mean.begin(), line_to_fit12.mean.end())
@@ -230,7 +229,9 @@ void Lin_Fit(const char* path, const char* out){
 
         g_mean->SetTitle("Punto vs Intervallo di tempo;#Delta t[ns];x[cm]");
 
-        g_mean->Fit("pol1");
+        TF1* l = new TF1("line", "[0] + [1] * x", 0, 22);
+
+        g_mean->Fit("line");
 
         if (i == 1){g_mean->Draw("AP");}
         else{g_mean->Draw("P SAME");}

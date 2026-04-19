@@ -20,9 +20,17 @@ class WF{
 
         double Amp(int N) const;
 
-        double DropTime(const double &w, int N) const;
+        double CFT(const double &w, int N) const;
 
-        double RiseTime(int N, int M) const;
+        double ARC(const double &k, const double &dt) const;
+
+        double maxDer() const;
+
+        bool IsOsc(int N) const;
+
+        bool IsClipped(double Vmax, double Vmin) const;
+
+        bool IsBadWF(int N, double Vmax, double Vmin) const;
 
         void SetTimeStamp(const std::string &date);
 
@@ -40,7 +48,9 @@ class Event {
 
         Event() : waveforms(3) {} 
 
-        WF GetChannel(int i) const;
+        const WF& GetChannel(int i) const;
+
+        bool IsBad(int N, double Vmax, double Vmin) const;
 };
 
 #endif

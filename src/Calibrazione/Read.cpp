@@ -3,7 +3,6 @@
 Codice per la letturra dei file del DRS:
     1)Salva la forma d'onda in due vettori tempo-voltaggio
     2)Implementa metodi per calcolo dell'area, istante di discesa e altre grandezze fisiche di interesse
-    3)implementazione successiva : creare una funzione che ne faccia derivata e integrale
 
 */
 
@@ -16,9 +15,21 @@ Codice per la letturra dei file del DRS:
 #include <TH1F.h>
 #include <TFile.h>
 #include <TTree.h>
+#include <TKey.h>
 #include "WF.h"
 
-void DRSread(const char* fname, const std::string &outname, const char* opt = "UPDATE"){
+std::vector<std::string> point_names = {"N130", "N112", "N84", "N56", "N28", "X0", "X28", "X56", "X84", "X112", "X130"};
+
+//Reading function, it converts a DRS file in a TTree
+
+void DRSread(const char* fname, 
+            const std::string &outname,
+             const char* outfile = "OutFiles/Points.root",
+             const char* opt = "UPDATE",
+             int n = 100,
+             double w = 0.5,
+             double k = 0.6,
+             double s = 1.25){
 
     //Import del file con check di apertura
 
@@ -97,41 +108,49 @@ void DRSread(const char* fname, const std::string &outname, const char* opt = "U
     
     std::vector<double> A[3];
 
-    std::vector<double> Dtime[3];
+    std::vector<double> CFT[3];
 
-    std::vector<double> Rtime[3];
+    std::vector<double> ARC[3];
+
+    std::vector<double> MDer[3];
 
     for(int i = 0; i < N; i++){
 
-        Event e = all_events[i];
+        Event& e = all_events[i];
+
+        if(e.IsBad(n, 500, -500)){
         
-        for (int ev_ind = 0; ev_ind < 3; ev_ind++){
+            for (int ev_ind = 0; ev_ind < 3; ev_ind++){
 
-            WF wf = e.GetChannel(ev_ind);
+                const WF& wf = e.GetChannel(ev_ind);
 
-            BL[ev_ind].push_back(wf.Baseline(10));
+                BL[ev_ind].push_back(wf.Baseline(n));
 
-            A[ev_ind].push_back(wf.Amp(10));
+                A[ev_ind].push_back(wf.Amp(n));
 
-            Dtime[ev_ind].push_back(wf.DropTime(0.5, 10));
+                CFT[ev_ind].push_back(wf.CFT(w, n));
 
-            Rtime[ev_ind].push_back(wf.RiseTime(10, 10));
+                double rise_time = wf.CFT(0.9, n) - wf.CFT(0.1, n);
 
+                ARC[ev_ind].push_back(wf.ARC(k, s * rise_time));
+
+                MDer[ev_ind].push_back(wf.maxDer());
+
+            }
         }
-
     }
 
-    TFile* f = new TFile("OutFiles/Points.root", opt);
+    TFile* f = new TFile(outfile, opt);
 
     TTree* t =  new TTree(outname.c_str(), outname.c_str());
 
-    Float_t bl[3], amp[3], dt[3], rt[3];
+    Float_t bl[3], amp[3], cft[3], arc[3], mder[3];
 
     t->Branch("BL", bl, "BL[3]/F");
     t->Branch("Amp", amp, "Amp[3]/F");
-    t->Branch("DropTime", dt, "DropTime[3]/F");
-    t->Branch("RiseTime", rt, "RiseTime[3]/F");
-
+    t->Branch("CFT", cft, "CFT[3]/F");
+    t->Branch("ARC", arc, "ARC[3]/F");
+    t->Branch("MDer", mder, "MDer[3]/F");
 
     for (int i = 0; i < N; i++){
 
@@ -142,9 +161,11 @@ void DRSread(const char* fname, const std::string &outname, const char* opt = "U
 
             amp[ev_ind] = A[ev_ind][i];
 
-            dt[ev_ind] = Dtime[ev_ind][i];
+            cft[ev_ind] = CFT[ev_ind][i];
 
-            rt[ev_ind] = Rtime[ev_ind][i];
+            arc[ev_ind] = ARC[ev_ind][i];
+
+            mder[ev_ind] = MDer[ev_ind][i];
 
         }
 
@@ -157,3 +178,20 @@ void DRSread(const char* fname, const std::string &outname, const char* opt = "U
     f->Close();
 
 }
+
+//It converts all file with name in point_names in TTree. Just run ReadFolder() to have an analysis, but it is unoptimized 
+
+void ReadFolder(const char* outname = "/home/lux_n/TOFrepo/OutFiles/Points.root", int n = 10, double w = 0.5, double k = 0.6, double s = 0.75){
+
+    for(size_t i = 0; i < point_names.size(); i++){
+
+        const char* opt;
+
+        if (i == 0){opt = "RECREATE";}
+        else {opt = "UPDATE";}
+
+        DRSread(Form("/home/lux_n/TOF_DRS/%s.xml", point_names[i].c_str()), point_names[i].c_str(), outname, opt, n, w, k, s);
+    }
+
+}
+
