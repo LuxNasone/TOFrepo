@@ -37,9 +37,9 @@ std::vector<double> H_Fit(const char* treename, const char* path, int kw){
                     .Define("dt_13", [](ROOT::RVecF a){ return a[0] - a[2]; }, {"CFT"})
                     .Define("dt_23", [](ROOT::RVecF a){ return a[1] - a[2]; }, {"CFT"});
 
-    auto h_12 = new_df.Histo1D({"dt12", "Differenze temporali 01-02", 100, -20, 20}, "dt_12");
-    auto h_13 = new_df.Histo1D({"dt13", "Differenze temporali 01-03", 100, -20, 20}, "dt_13");
-    auto h_23 = new_df.Histo1D({"dt23", "Differenze temporali 02-03", 100, -20, 20}, "dt_23");
+    auto h_12 = new_df.Histo1D({"dt12", "Differenze temporali 01-02", 100, -30, 30}, "dt_12");
+    auto h_13 = new_df.Histo1D({"dt13", "Differenze temporali 01-03", 100, -30, 30}, "dt_13");
+    auto h_23 = new_df.Histo1D({"dt23", "Differenze temporali 02-03", 100, -30, 30}, "dt_23");
 
     auto h12 = h_12.GetValue();
     auto h13 = h_13.GetValue();
@@ -47,15 +47,19 @@ std::vector<double> H_Fit(const char* treename, const char* path, int kw){
 
     std::vector<TH1D*> h_v = {h_12.GetPtr(), h_13.GetPtr(), h_23.GetPtr()};
 
-    double min = h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()) - 2* h_v[kw]->GetStdDev();
-    
-    double max = h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()) + 2* h_v[kw]->GetStdDev();
+    //TCanvas* c = new TCanvas(Form("%d", kw), Form("%d", kw), 800, 600);
 
-    TF1 *f = new TF1("f", "breitwigner", min, max);
+    TF1 *f = new TF1("f", "breitwigner", -30, 30);
 
     f->SetParameters(h_v[kw]->GetMaximum(), h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()), h_v[kw]->GetStdDev());
 
     h_v[kw]->Fit(f, "ILSQ");
+
+    //h_v[0]->Draw();
+
+    //c->Update();
+
+    //c->SaveAs(Form("%s.png", treename));
 
     std::vector<double> result = {f->GetParameter(1), f->GetParError(1), f->GetParameter(2), f->GetParError(2)};
 
@@ -93,11 +97,13 @@ void Lin_Fit(const char* path, const char* out){
 
     for (size_t j = 0; j < point_names.size(); j++){
 
+        int k = j - 5;
+
         if(point_names[j][0]  == 'X'){x.push_back(std::stod(point_names[j].substr(1)));}
 
         if(point_names[j][0]  == 'N'){x.push_back( - std::stod(point_names[j].substr(1)));}
         
-        dx.push_back(2.45);
+        dx.push_back(2.45 + abs(k) * 0.1);
 
     }
 
@@ -157,7 +163,6 @@ void Lin_Fit(const char* path, const char* out){
     gPad->SetTopMargin(0.02);
     gPad->SetBottomMargin(0.3);
 
-    // Calcolo residui
     std::vector<double> residui(x.size());
     std::vector<double> residui_err(x.size());
 
@@ -221,7 +226,7 @@ void Lin_Fit(const char* path, const char* out){
 
         c_mean->cd();
 
-        TGraphErrors* g_mean = new TGraphErrors(x.size(), line.mean.data(), x.data(), line.mean_err.data(), dx.data());
+        TGraphErrors* g_mean = new TGraphErrors(x.size(), x.data(), line.mean.data(), dx.data(), line.mean_err.data());
 
         g_mean->SetMarkerColor(i+1);
         g_mean->SetLineColor(i+1);
@@ -263,6 +268,152 @@ void Lin_Fit(const char* path, const char* out){
 
     c_mean->Write("Mean_graphs");
     c_std->Write("STD_graphs");
+
+    output->Close();
+
+    gROOT->SetBatch(kFALSE);
+
+}
+
+void W_bias(const char* path = "/home/lux_n/TOFrepo/OutFiles/scanW"){
+
+    std::vector<double> res;
+    std::vector<double> res_err;
+    std::vector<double> w_v;
+    std::vector<double> w_err;
+
+    for (int i = 0; i < 10; i++){
+
+        float w = 0.1 * (1 + i);
+
+        w = std::round(w * 10) / 10.0f;
+
+        w_v.push_back(w);
+        w_err.push_back(1e-4);
+
+        std::vector<double> v = H_Fit(Form("%.1f", w), Form("%s/%.1f.root", path, w), 0);
+
+        res.push_back(v[2]);
+        res_err.push_back(v[3]);
+
+    }
+
+    TCanvas* c_w = new TCanvas("W vs Sigma", "W vs Sigma", 800, 600);
+
+    TGraphErrors* g_w = new TGraphErrors(w_v.size(), w_v.data(), res.data(), w_err.data(), res_err.data());
+
+    g_w->GetXaxis()->SetLimits(0, 1.2);
+    g_w->GetYaxis()->SetRangeUser(0, 5);
+    g_w->SetMarkerStyle(20);
+    g_w->SetMarkerSize(1.2);
+
+    g_w->SetTitle("W vs Sigma;W;#sigma_{t} [ns]");
+
+    g_w->Draw("AP");
+
+    c_w->Update();
+
+    c_w->SaveAs("W_graph.png");
+
+    delete g_w;
+    delete c_w;
+
+}
+
+void IntrinsicRes(const char* path, const char* out){
+
+    gROOT->SetBatch(kTRUE);
+
+    Points Lines[n_h];
+
+    for(size_t i = 0; i < point_names.size(); i++){
+
+        for(int kw = 0; kw < n_h; kw++){
+
+            std::vector<double> result = H_Fit(point_names[i].c_str(), path, kw);
+
+            Points &current_line = Lines[kw];
+
+            current_line.mean.push_back(result[0]);
+
+            current_line.mean_err.push_back(result[1]);
+
+            current_line.std.push_back(result[2]);
+
+            current_line.std_err.push_back(result[3]);
+
+        }
+
+    }
+
+    std::vector<double> x;
+    std::vector<double> dx;
+
+    for (size_t j = 0; j < point_names.size(); j++){
+
+        int k = j - 5;
+
+        if(point_names[j][0]  == 'X'){x.push_back(std::stod(point_names[j].substr(1)));}
+
+        if(point_names[j][0]  == 'N'){x.push_back( - std::stod(point_names[j].substr(1)));}
+        
+        dx.push_back(2.45 + abs(k) * 0.1);
+
+    }
+
+    std::vector<double> sigma_1;
+    std::vector<double> sigma_2;
+    std::vector<double> sigma_3;
+
+    for (size_t j = 0; j < point_names.size(); j++){
+
+        double s_1 = sqrt(0.5 * (pow(Lines[0].std[j], 2) + pow(Lines[2].std[j],2) - pow(Lines[1].std[j], 2))); 
+
+        std::cout << s_1 <<std::endl;
+
+        sigma_1.push_back(s_1);
+
+        double s_2 = sqrt(0.5 * (pow(Lines[1].std[j], 2) + pow(Lines[0].std[j], 2) - pow(Lines[2].std[j], 2)));
+
+        std::cout << s_2 <<std::endl; 
+
+        sigma_2.push_back(s_2);
+
+        double s_3 = sqrt(0.5 * (abs(pow(Lines[1].std[j], 2) + pow(Lines[2].std[j], 2) - pow(Lines[0].std[j], 2))));
+
+        std::cout << s_3 <<std::endl;
+
+        sigma_3.push_back(s_3);
+
+    }
+
+    std::vector<std::vector<double>> sigma = {sigma_1, sigma_2, sigma_3};
+
+    TFile* output = new TFile(out, "RECREATE");
+
+    for (size_t j = 0; j < sigma.size(); j++){
+
+        TCanvas* c = new TCanvas(Form("PMT0%d", (int)j+1), Form("PMT0%d", (int)j+1), 800, 600);
+
+        TGraph* g = new TGraph(x.size(), x.data(), sigma[j].data());
+
+        g->SetMarkerColor(1);
+        g->SetLineColor(1);
+        g->SetMarkerStyle(20);
+
+        g->SetTitle(Form("Punto vs Incertezza intrinseca PMT0%d;x[cm]; #sigma_t", (int)j + 1));
+
+        g->Draw("AP");
+
+        c->Update();
+
+        c->Write();
+
+        delete c;
+
+        delete g;
+
+    }
 
     output->Close();
 

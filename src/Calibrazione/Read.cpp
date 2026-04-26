@@ -27,7 +27,7 @@ void DRSread(const char* fname,
              const char* outfile = "OutFiles/Points.root",
              const char* opt = "UPDATE",
              int n = 100,
-             double w = 0.5,
+             double w = 0.2,
              double k = 0.6,
              double s = 1.25){
 
@@ -181,7 +181,7 @@ void DRSread(const char* fname,
 
 //It converts all file with name in point_names in TTree. Just run ReadFolder() to have an analysis, but it is unoptimized 
 
-void ReadFolder(const char* outname = "/home/lux_n/TOFrepo/OutFiles/Points.root", int n = 10, double w = 0.5, double k = 0.6, double s = 0.75){
+void ReadFolder(const char* outname = "/home/lux_n/TOFrepo/OutFiles/Points.root", int n = 10, double w = 0.2, double k = 0.6, double s = 0.75){
 
     for(size_t i = 0; i < point_names.size(); i++){
 
@@ -190,7 +190,27 @@ void ReadFolder(const char* outname = "/home/lux_n/TOFrepo/OutFiles/Points.root"
         if (i == 0){opt = "RECREATE";}
         else {opt = "UPDATE";}
 
-        DRSread(Form("/home/lux_n/TOF_DRS/%s.xml", point_names[i].c_str()), point_names[i].c_str(), outname, opt, n, w, k, s);
+        DRSread(Form("/home/lux_n/TOF_DRS/CalOld/%s.xml", point_names[i].c_str()), point_names[i].c_str(), outname, opt, n, w, k, s);
+    }
+
+}
+
+//Meant to be used as a test for CFT method and estimate systematic bias due to amp fraction choice 
+
+void ScanW(const char* outname = "/home/lux_n/TOFrepo/OutFiles/Points.root", int n = 10, double k = 0.6, double s = 0.75){
+
+    for(size_t i = 0; i < 10; i++){
+
+        float w = 0.1 * (1 + i);
+
+        const char* opt;
+
+        if (i == 0){opt = "RECREATE";}
+        
+        else {opt = "UPDATE";}
+        
+        DRSread("/home/lux_n/TOF_DRS/X0.xml", Form("%.1f", w), Form("/home/lux_n/TOF_repo/OutFiles/scanW/%.1f.root", w), opt, n, w, k, s);
+
     }
 
 }

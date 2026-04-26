@@ -113,22 +113,30 @@ double WF::maxDer() const{
     return drop_time;
     
 }
-bool WF::IsOsc(int N) const{
+bool WF::IsOsc(int N) const {
 
     double BL = Baseline(N);
-
     double A = Amp(N);
-
-    int count = 0;
     double threshold = 0.25 * A;
 
-    for (size_t i = 0; i < V.size(); i++) {
-        if (std::abs(V[i] - BL) > threshold) {
-            count++;
-        }
+    int crossings = 0;
+    int activeSamples = 0;
+
+    for (size_t i = 1; i < V.size(); i++) {
+
+        if (std::abs(V[i] - BL) > threshold)
+            activeSamples++;
+
+        if ((V[i-1] - BL) * (V[i] - BL) < 0)
+            crossings++;
     }
 
-    return count > 0.1 * V.size();
+    double frac = (double)activeSamples / V.size();
+
+    bool tooOscillatory = crossings > 10;
+    bool tooWide = frac > 0.3;
+
+    return tooOscillatory || tooWide;
 }
 bool WF::IsClipped(double Vmax, double Vmin) const {
 
