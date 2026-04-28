@@ -49,7 +49,7 @@ std::vector<double> H_Fit(const char* treename, const char* path, int kw){
 
     //TCanvas* c = new TCanvas(Form("%d", kw), Form("%d", kw), 800, 600);
 
-    TF1 *f = new TF1("f", "breitwigner", -30, 30);
+    TF1 *f = new TF1("f", "gaus", -30, 30);
 
     f->SetParameters(h_v[kw]->GetMaximum(), h_v[kw]->GetBinCenter(h_v[kw]->GetMaximumBin()), h_v[kw]->GetStdDev());
 
@@ -357,7 +357,7 @@ void IntrinsicRes(const char* path, const char* out){
 
         if(point_names[j][0]  == 'N'){x.push_back( - std::stod(point_names[j].substr(1)));}
         
-        dx.push_back(2.45 + abs(k) * 0.1);
+        dx.push_back(2.8 + abs(k) * 0.1);
 
     }
 
