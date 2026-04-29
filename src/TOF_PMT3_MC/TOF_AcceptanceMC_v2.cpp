@@ -89,7 +89,9 @@
 #include <TLatex.h>
 #include <TMath.h>
 #include <TF1.h>
-
+#include <TFile.h>
+#include <TTree.h>
+#include <fstream>
 
 // ============================================================================
 //  COSTANTI GEOMETRICHE DEL SETUP  (tutte in cm)
@@ -730,4 +732,398 @@ void CompareExponents(int n_per_point, double x_pmt3, double z_pmt3)
     }
     leg->Draw(); cc->Update();
     std::cout << "\n  Confronto esponenti completato.\n\n";
+}
+// ============================================================================
+//  ============================================================================
+//      SEZIONE PARALLASSE — STIMA DELL'ERRORE σ_x DA MC
+//  ============================================================================
+//
+//  Funzioni per stimare l'errore stocastico σ_x sulla posizione di passaggio
+//  del muone NELLA BARRA, dato che il PMT3 è centrato in x_PMT3 (la posizione
+//  letta col metro).
+//
+//  L'errore "di parallasse" σ_x include:
+//    - dimensione finita dello scintillatore di PMT3 (~ ℓ/√12)
+//    - parallasse geometrica dovuta alla distribuzione angolare dei cosmici
+//    - smearing verticale dovuto allo spessore della barra (opzionale)
+//
+//  Il MC genera questi tre contributi insieme nel modo fisicamente corretto.
+//
+//  CONVENZIONE COORDINATE: queste funzioni usano coordinate CENTRATE
+//  (x ∈ [-L_bar/2, +L_bar/2], cioè x=0 al centro della barra), consistenti
+//  con il codice di calibrazione TOF_Calibration_v3.cpp. La conversione
+//  alle coordinate native del MC (0..L_bar) è fatta internamente.
+//
+// ============================================================================
+
+
+// ----------------------------------------------------------------------------
+//  Conversione coordinate centrate ↔ native MC
+// ----------------------------------------------------------------------------
+//  Coordinate centrate (codice calibrazione): x ∈ [-140, +140] cm
+//  Coordinate native MC:                       x ∈ [0, 280] cm
+//  Relazione: x_native = x_centered + L_bar/2
+
+inline double CenteredToNative(double x_centered) {
+    return x_centered + L_bar / 2.0;
+}
+inline double NativeToCentered(double x_native) {
+    return x_native - L_bar / 2.0;
+}
+
+
+// ----------------------------------------------------------------------------
+//  ParallaxScan
+// ----------------------------------------------------------------------------
+//
+//  Fa lo scan delle posizioni del PMT3 e per ciascuna calcola:
+//    bias_x  = <x_barra - x_PMT3>           (valor medio, bias sistematico)
+//    sigma_x = sqrt(Var[x_barra - x_PMT3])  (dev. std. = errore stocastico)
+//    mse_x   = sqrt(<(x_barra - x_PMT3)²>)  (sqrt MSE = bias² + sigma²)
+//
+//  L'errore stocastico σ_x è quello che ENTRA come errore su x nel fit
+//  Δt vs x_PMT3 (insieme ad altri termini come la lettura del metro).
+//  Il bias è una correzione SISTEMATICA che andrebbe sottratta a x_PMT3
+//  prima del fit, oppure trattata come incertezza separata se piccola.
+//
+//  PARAMETRI:
+//    n_per_point  — numero di muoni generati per ogni posizione
+//    exponent     — esponente α della distribuzione cos^α(θ)
+//    z_pmt3       — quota verticale del PMT3 [cm]:
+//                     +4.1   → Guida A (sopra, calibrazione)
+//                     -160.6 → Guida B (sotto, TOF)
+//    x_min, x_max, dx_step — griglia di posizioni in COORDINATE CENTRATE [cm]
+//    use_bar_thickness     — se true, simula z_scint uniforme in [-T_bar, 0]
+//                            (cattura lo smearing verticale dello spessore barra)
+//                            Per Guida A irrilevante; per Guida B può contribuire.
+//    output_file  — nome del file ROOT di output. Salva:
+//                     TTree "parallax" con bias, sigma, mse, accettanza
+//                     TGraphErrors "g_sigma_x" per uso diretto
+//
+//  USO TIPICO:
+//    // Per la calibrazione (Guida A):
+//    ParallaxScan(500000, 2.0, +4.1, -135.0, +135.0, 5.0,
+//                 false, "parallax_GuidaA.root");
+//
+//    // Per la misura TOF (Guida B):
+//    ParallaxScan(500000, 2.0, -160.6, -135.0, +135.0, 5.0,
+//                 true, "parallax_GuidaB.root");
+
+void ParallaxScan(int n_per_point = 500000,
+                  double exponent = 2.0,
+                  double z_pmt3 = +4.1,
+                  double x_min = -135.0,
+                  double x_max = +135.0,
+                  double dx_step = 5.0,
+                  bool use_bar_thickness = false,
+                  const char* output_file = "parallax_scan.root")
+{
+    gRandom = new TRandom3(0);
+
+    bool pmt3_sopra = (z_pmt3 > 0);
+    std::string config_name = pmt3_sopra
+        ? "GUIDA A (PMT3 sopra, calibrazione)"
+        : "GUIDA B (PMT3 sotto, TOF)";
+
+    // --- Costruzione griglia posizioni ---
+    int n_points = (int)round((x_max - x_min) / dx_step) + 1;
+
+    std::cout << "\n============================================================\n";
+    std::cout << "  PARALLAX SCAN — " << config_name << "\n";
+    std::cout << "============================================================\n";
+    std::cout << "  Eventi per punto:    " << n_per_point << "\n";
+    std::cout << "  Esponente α:         " << exponent << "\n";
+    std::cout << "  z_PMT3:              " << z_pmt3 << " cm\n";
+    std::cout << "  Griglia x:           [" << x_min << ", " << x_max
+              << "] cm, passo " << dx_step << " cm  ("
+              << n_points << " punti)\n";
+    std::cout << "  Smearing barra:      "
+              << (use_bar_thickness ? "ON" : "OFF") << "\n";
+    std::cout << "  Output:              " << output_file << "\n";
+    std::cout << "============================================================\n\n";
+
+
+    // --- File ROOT di output ---
+    TFile *fout = new TFile(output_file, "RECREATE");
+
+    // TTree: una entry per posizione di scan
+    TTree *tree = new TTree("parallax",
+        "Statistiche di parallasse per posizione del PMT3");
+    Double_t t_x_pmt3, t_bias_x, t_sigma_x, t_mse_x, t_accept;
+    Int_t    t_n_acc;
+    tree->Branch("x_pmt3",  &t_x_pmt3, "x_pmt3/D");   // posizione centrata [cm]
+    tree->Branch("bias_x",  &t_bias_x, "bias_x/D");   // <x_barra - x_PMT3> [cm]
+    tree->Branch("sigma_x", &t_sigma_x,"sigma_x/D");  // dev std stocastica [cm]
+    tree->Branch("mse_x",   &t_mse_x,  "mse_x/D");    // sqrt(MSE) [cm]
+    tree->Branch("accept",  &t_accept, "accept/D");   // accettanza
+    tree->Branch("n_acc",   &t_n_acc,  "n_acc/I");    // n eventi accettati
+
+
+    // --- Vettori per il TGraphErrors ---
+    std::vector<double> v_x, v_sigma, v_ex, v_esigma;
+    std::vector<double> v_bias;
+
+
+    // --- Stampa header tabella ---
+    std::cout << std::setw(10) << "x [cm]"
+              << std::setw(13) << "bias [cm]"
+              << std::setw(13) << "sigma [cm]"
+              << std::setw(13) << "MSE [cm]"
+              << std::setw(13) << "Acc [%]"
+              << std::setw(10) << "N_acc\n";
+    std::cout << "----------------------------------------------------------------\n";
+
+
+    // --- Loop sulle posizioni ---
+    CosmicRay ray(exponent, L_bar, W_bar);
+
+    for (int ip = 0; ip < n_points; ip++) {
+
+        // Posizione del PMT3 in coordinate centrate
+        double x_centered = x_min + ip * dx_step;
+
+        // Conversione a coordinate native del MC (0..L_bar) per Scintillator
+        double x_native   = CenteredToNative(x_centered);
+
+        Scintillator pmt3(x_native, 0.0, z_pmt3, scint3_dx, scint3_dy);
+
+        // Accumulatori per le statistiche di (x_barra - x_PMT3)
+        double sum_dx  = 0.0;   // somma differenze
+        double sum_dx2 = 0.0;   // somma quadrati
+        int    n_acc   = 0;
+
+        for (int i = 0; i < n_per_point; i++) {
+
+            ray.Throw();
+
+            if (pmt3.CheckIntersect(ray)) {
+                // x_barra = posizione di scintillazione nella barra (in coord native)
+                // Nel codice originale è semplicemente ray.X0() (sulla superficie z=0).
+                //
+                // Se use_bar_thickness=true, simuliamo z_scint uniforme dentro
+                // lo spessore della barra: z_scint ∈ [-T_bar, 0]. La correzione
+                // a x_barra è: -z_scint * tan(θ) * cos(φ).
+                double x_barra_native = ray.X0();
+
+                if (use_bar_thickness) {
+                    double z_scint = gRandom->Uniform(-T_bar, 0.0);
+                    double cosTh   = ray.CosTheta();
+                    double tanTh   = sqrt(1.0 - cosTh*cosTh) / cosTh;
+                    x_barra_native = ray.X0() - z_scint * tanTh * cos(ray.Phi());
+                }
+
+                // Differenza in coordinate centrate (è invariante per traslazione)
+                double dx_event = x_barra_native - x_native;
+
+                sum_dx  += dx_event;
+                sum_dx2 += dx_event * dx_event;
+                n_acc++;
+            }
+        }
+
+        // --- Calcolo statistiche ---
+        double accept = (double)n_acc / (double)n_per_point;
+        double bias_x = 0.0, sigma_x = 0.0, mse_x = 0.0;
+
+        if (n_acc > 1) {
+            bias_x = sum_dx / n_acc;
+            // Varianza campionaria (con correzione di Bessel non strettamente
+            // necessaria per n_acc grande, ma ben venga essere precisi)
+            double var_x = (sum_dx2 - n_acc * bias_x * bias_x) / (n_acc - 1);
+            if (var_x < 0) var_x = 0;  // protezione errori numerici
+            sigma_x = sqrt(var_x);
+            mse_x   = sqrt(sum_dx2 / n_acc);  // sqrt(MSE) = sqrt(bias² + var)
+        }
+
+        // --- Salva nel TTree ---
+        t_x_pmt3 = x_centered;
+        t_bias_x = bias_x;
+        t_sigma_x = sigma_x;
+        t_mse_x  = mse_x;
+        t_accept = accept;
+        t_n_acc  = n_acc;
+        tree->Fill();
+
+        // --- Salva nei vettori per il TGraph ---
+        v_x.push_back(x_centered);
+        v_sigma.push_back(sigma_x);
+        v_bias.push_back(bias_x);
+        v_ex.push_back(0.0);
+        // Errore su sigma stesso (errore della deviazione standard di un
+        // campione gaussiano): σ(σ) ≈ σ / √(2(n-1))
+        double sig_err = (n_acc > 1) ? sigma_x / sqrt(2.0 * (n_acc - 1)) : 0;
+        v_esigma.push_back(sig_err);
+
+        // --- Stampa riga ---
+        std::cout << std::fixed << std::setprecision(2)
+                  << std::setw(10) << x_centered
+                  << std::setw(13) << bias_x
+                  << std::setw(13) << sigma_x
+                  << std::setw(13) << mse_x
+                  << std::setw(13) << std::setprecision(3) << accept * 100.0
+                  << std::setw(10) << n_acc << "\n";
+    }
+
+
+    // --- Crea e salva TGraphErrors di sigma_x ---
+    TGraphErrors *g_sigma = new TGraphErrors(v_x.size(),
+                                              v_x.data(), v_sigma.data(),
+                                              v_ex.data(), v_esigma.data());
+    g_sigma->SetName("g_sigma_x");
+    g_sigma->SetTitle(Form("#sigma_{x} di parallasse vs x_{PMT3} (%s);"
+                            "x_{PMT3} [cm];#sigma_{x} [cm]",
+                            config_name.c_str()));
+    g_sigma->SetMarkerStyle(20);
+    g_sigma->SetMarkerColor(pmt3_sopra ? kBlue+1 : kRed+1);
+    g_sigma->SetLineColor(pmt3_sopra ? kBlue+1 : kRed+1);
+
+    // --- TGraph per il bias (errori su bias trascurabili a queste statistiche) ---
+    TGraph *g_bias = new TGraph(v_x.size(), v_x.data(), v_bias.data());
+    g_bias->SetName("g_bias_x");
+    g_bias->SetTitle(Form("Bias di parallasse vs x_{PMT3} (%s);"
+                           "x_{PMT3} [cm];#LT x_{barra} - x_{PMT3} #GT [cm]",
+                           config_name.c_str()));
+    g_bias->SetMarkerStyle(21);
+    g_bias->SetMarkerColor(kGreen+2);
+    g_bias->SetLineColor(kGreen+2);
+
+    // --- Salva tutto su file ---
+    fout->cd();
+    tree->Write();
+    g_sigma->Write();
+    g_bias->Write();
+    fout->Close();
+
+    std::cout << "\n  Risultati salvati in: " << output_file << "\n";
+    std::cout << "============================================================\n\n";
+}
+
+
+// ----------------------------------------------------------------------------
+//  PlotParallax
+// ----------------------------------------------------------------------------
+//
+//  Carica uno o due file di output di ParallaxScan e disegna i grafici di
+//  σ_x e bias in funzione di x_PMT3. Utile per confronto Guida A vs B.
+//
+//  USO:
+//    PlotParallax("parallax_GuidaA.root");
+//    PlotParallax("parallax_GuidaA.root", "parallax_GuidaB.root");
+
+void PlotParallax(const char* file_a,
+                  const char* file_b = nullptr)
+{
+    TFile *fa = TFile::Open(file_a);
+    if (!fa || fa->IsZombie()) {
+        std::cerr << "[ERRORE] Impossibile aprire " << file_a << "\n";
+        return;
+    }
+    TGraphErrors *g_sa = (TGraphErrors*)fa->Get("g_sigma_x");
+    TGraph       *g_ba = (TGraph*)fa->Get("g_bias_x");
+
+    TFile *fb = nullptr;
+    TGraphErrors *g_sb = nullptr;
+    TGraph       *g_bb = nullptr;
+    if (file_b) {
+        fb = TFile::Open(file_b);
+        if (fb && !fb->IsZombie()) {
+            g_sb = (TGraphErrors*)fb->Get("g_sigma_x");
+            g_bb = (TGraph*)fb->Get("g_bias_x");
+        }
+    }
+
+    gStyle->SetOptStat(0);
+
+    // Canvas σ_x
+    TCanvas *cs = new TCanvas("c_parallax_sigma",
+                               "Sigma_x parallasse vs posizione", 900, 600);
+    cs->SetGrid();
+    g_sa->SetTitle(";x_{PMT3} [cm];#sigma_{x} parallasse [cm]");
+    g_sa->Draw("APE");
+    if (g_sb) {
+        g_sb->Draw("PE same");
+        TLegend *leg = new TLegend(0.62, 0.74, 0.88, 0.88);
+        leg->AddEntry(g_sa, "Guida A (calibrazione)", "lp");
+        leg->AddEntry(g_sb, "Guida B (TOF)",         "lp");
+        leg->Draw();
+    }
+    cs->Update();
+
+    // Canvas bias
+    TCanvas *cb = new TCanvas("c_parallax_bias",
+                               "Bias x parallasse vs posizione", 900, 600);
+    cb->SetGrid();
+    g_ba->SetTitle(";x_{PMT3} [cm];#LT x_{barra} - x_{PMT3} #GT [cm]");
+    g_ba->Draw("APL");
+    if (g_bb) {
+        g_bb->Draw("PL same");
+        TLegend *leg = new TLegend(0.62, 0.74, 0.88, 0.88);
+        leg->AddEntry(g_ba, "Guida A (calibrazione)", "lp");
+        leg->AddEntry(g_bb, "Guida B (TOF)",         "lp");
+        leg->Draw();
+    }
+    cb->Update();
+}
+
+
+// ----------------------------------------------------------------------------
+//  GetParallaxSigma
+// ----------------------------------------------------------------------------
+//
+//  Helper che il codice di calibrazione può chiamare per ottenere σ_x
+//  parallasse a una posizione specifica, leggendola dal file di scan.
+//  Se la posizione richiesta non è esattamente nella griglia, fa
+//  interpolazione lineare tra i due punti più vicini.
+//
+//  Restituisce -1.0 in caso di errore (file non trovato, posizione fuori range).
+//
+//  USO (dal codice di calibrazione):
+//    double sx = GetParallaxSigma("parallax_GuidaA.root", -56.0);
+
+double GetParallaxSigma(const char* file, double x_pmt3_centered)
+{
+    TFile *f = TFile::Open(file);
+    if (!f || f->IsZombie()) {
+        std::cerr << "[ERRORE] GetParallaxSigma: file non leggibile: "
+                  << file << "\n";
+        return -1.0;
+    }
+
+    TGraph *g = (TGraph*)f->Get("g_sigma_x");
+    if (!g) {
+        std::cerr << "[ERRORE] GetParallaxSigma: grafico g_sigma_x assente in "
+                  << file << "\n";
+        f->Close();
+        return -1.0;
+    }
+
+    // TGraph::Eval fa interpolazione lineare automaticamente
+    double sigma = g->Eval(x_pmt3_centered);
+    f->Close();
+    return sigma;
+}
+
+
+// ----------------------------------------------------------------------------
+//  GetParallaxBias
+// ----------------------------------------------------------------------------
+//
+//  Analogo di GetParallaxSigma per il bias di parallasse.
+//  Utile se vuoi correggere x_PMT3 prima del fit:
+//    x_corretto = x_PMT3 + bias_parallax(x_PMT3)
+//
+//  USO:
+//    double bx = GetParallaxBias("parallax_GuidaA.root", -56.0);
+
+double GetParallaxBias(const char* file, double x_pmt3_centered)
+{
+    TFile *f = TFile::Open(file);
+    if (!f || f->IsZombie()) return 0.0;
+
+    TGraph *g = (TGraph*)f->Get("g_bias_x");
+    if (!g) { f->Close(); return 0.0; }
+
+    double bias = g->Eval(x_pmt3_centered);
+    f->Close();
+    return bias;
 }
