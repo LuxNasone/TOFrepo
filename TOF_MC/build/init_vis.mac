@@ -1,0 +1,37 @@
+# Apri viewer OpenGL
+/vis/open OGL 800x600-0+0
+
+# Imposta vista
+/vis/viewer/set/viewpointVector 1 1 1
+/vis/viewer/set/autoRefresh true
+/vis/viewer/set/style surface
+
+# Crea scena
+/vis/scene/create
+
+# Aggiungi geometria
+/vis/scene/add/volume
+
+# Disegna geometria
+/vis/drawVolume
+
+# Assi cartesiani (IMPORTANTISSIMO)
+/vis/scene/add/axes 0 0 0 50 cm
+
+# Colori + rendering
+/vis/geometry/set/colour World 0.8 0.8 0.8 0.2
+/vis/geometry/set/colour Envelope 0.6 0.6 0.9 0.4
+/vis/geometry/set/colour Bar 0.9 0.2 0.2 1.0
+/vis/geometry/set/colour Surf 0.2 0.8 0.2 1.0
+
+# Stile solido (fondamentale per vedere i volumi)
+/vis/viewer/set/style surface
+
+# Migliora rendering
+/vis/viewer/set/lightsThetaPhi 45 45
+/vis/viewer/set/background white
+
+# Aggiorna scena
+/vis/viewer/flush
+
+/run/beamOn 100
