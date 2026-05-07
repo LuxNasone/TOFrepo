@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e01d664a57b71338",
+        "id": "2daf55a3c2891d37",
         "type": "tabs",
         "children": [
           {
-            "id": "7da1dda25c71571b",
+            "id": "f5c48441b41538c1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sessione 16_04_2026.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sessione 16_04_2026"
+              "title": "README"
             }
           }
         ]
@@ -174,12 +174,23 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "00a80e05115028ac",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -195,29 +206,38 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7da1dda25c71571b",
+  "active": "f5c48441b41538c1",
   "lastOpenFiles": [
-    "Sessione 21_04_2026 (ASSENTE).md",
-    "Sessione 09_04_2026.md",
-    "Sessione 16_04_2026.md",
-    "Sessione 22_04_2026.md",
-    "Sessione 15_04_2026.md",
-    "Sessione 14_04_2026.md",
+    "Senza nome.base",
+    "README.md",
+    "Senza nome.canvas",
+    "Sessione 05_06_2026.md",
+    "Sessione 04_09_2026.md",
+    "Sessione 04_22_2026.md",
+    "Sessione 04_21_2026 (ASSENTE).md",
+    "Sessione 04_16_2026.md",
+    "Sessione 04_14_2026.md",
+    "Sessione 04_15_2026.md",
+    "Csv/FinalPMT04.csv",
+    "Csv/FinalPMT04.csv.opdownload",
+    "immagini/eff_4.png",
+    "Sessione 05_05_2026.md",
+    "Sessione 04_30_2026.md",
+    "Sessione 04_29_2026.md",
+    "Sessione 04_28_2026.md",
+    "Sessione 04_23_2026.md",
+    "PDF/Sessione 29_04_2026.pdf",
+    "PDF/Sessione 28_04_2026.pdf",
+    "PDF/Sessione 21_04_2026 (ASSENTE).pdf",
+    "PDF/Sessione 22_04_2026.pdf",
+    "PDF/Sessione 23_04_2026.pdf",
+    "immagini/grafico_PMT3_acceptance.png",
+    "PDF/Sessione 16_04_2026.pdf",
     "immagini/PMT3.png",
     "immagini/barra.png",
-    "Senza nome.md",
     "Csv/Problematico.jpg",
     "Csv/Problematico.jpg.opdownload",
-    "PDF/Sessione 16_04_2026.pdf",
-    "Csv/efficienze_posizione.csv",
-    "PDF/Sessione 15_04_2026.pdf",
-    "PDF/scheda_tof_v4.2.pdf",
     "immagini/TOF_apparato.png",
-    "PDF/Sessione 14_04_2026.pdf",
-    "PDF/Sessione 09_04_2026.pdf",
-    "PDF",
-    "Cartella senza nome",
-    "Sessione 09_04_2026.pdf",
     "immagini/grafico_PMT2.png",
     "immagini/grafico_PMT3.png",
     "immagini/grafico_PMT1.png"
