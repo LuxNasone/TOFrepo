@@ -1,6 +1,7 @@
 CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: \
- /home/lux_n/TOF_MC/src/SensitiveDetector.cc /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/SensitiveDetector.hh \
+ /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc \
+ /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
@@ -363,4 +364,5 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4OpticalPhoton.hh

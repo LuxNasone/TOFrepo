@@ -1,6 +1,6 @@
 CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: \
- /home/lux_n/TOF_MC/src/PhysicsList.cc /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/PhysicsList.hh \
+ /home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/PhysicsList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/FTFP_BERT.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \

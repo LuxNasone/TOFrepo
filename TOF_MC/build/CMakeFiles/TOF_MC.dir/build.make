@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lux_n/TOF_MC
+CMAKE_SOURCE_DIR = /home/lux_n/TOFrepo/TOF_MC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lux_n/TOF_MC/build
+CMAKE_BINARY_DIR = /home/lux_n/TOFrepo/TOF_MC/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TOF_MC.dir/depend.make
@@ -70,139 +70,139 @@ include CMakeFiles/TOF_MC.dir/progress.make
 include CMakeFiles/TOF_MC.dir/flags.make
 
 CMakeFiles/TOF_MC.dir/main.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOF_MC/main.cc
+CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc
 CMakeFiles/TOF_MC.dir/main.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TOF_MC.dir/main.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/main.cc.o -MF CMakeFiles/TOF_MC.dir/main.cc.o.d -o CMakeFiles/TOF_MC.dir/main.cc.o -c /home/lux_n/TOF_MC/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TOF_MC.dir/main.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/main.cc.o -MF CMakeFiles/TOF_MC.dir/main.cc.o.d -o CMakeFiles/TOF_MC.dir/main.cc.o -c /home/lux_n/TOFrepo/TOF_MC/main.cc
 
 CMakeFiles/TOF_MC.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/main.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/main.cc > CMakeFiles/TOF_MC.dir/main.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/main.cc > CMakeFiles/TOF_MC.dir/main.cc.i
 
 CMakeFiles/TOF_MC.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/main.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/main.cc -o CMakeFiles/TOF_MC.dir/main.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/main.cc -o CMakeFiles/TOF_MC.dir/main.cc.s
 
 CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: /home/lux_n/TOF_MC/src/DetectorConstruction.cc
+CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/DetectorConstruction.cc
 CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o -MF CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o -c /home/lux_n/TOF_MC/src/DetectorConstruction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o -MF CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/DetectorConstruction.cc
 
 CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/DetectorConstruction.cc > CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/DetectorConstruction.cc > CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.i
 
 CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/DetectorConstruction.cc -o CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.s
-
-CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: /home/lux_n/TOF_MC/src/PrimaryGeneratorAction.cc
-CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o -c /home/lux_n/TOF_MC/src/PrimaryGeneratorAction.cc
-
-CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/PrimaryGeneratorAction.cc > CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i
-
-CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/PrimaryGeneratorAction.cc -o CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s
-
-CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: /home/lux_n/TOF_MC/src/RunAction.cc
-CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TOF_MC.dir/src/RunAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/RunAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/RunAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/RunAction.cc.o -c /home/lux_n/TOF_MC/src/RunAction.cc
-
-CMakeFiles/TOF_MC.dir/src/RunAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/RunAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/RunAction.cc > CMakeFiles/TOF_MC.dir/src/RunAction.cc.i
-
-CMakeFiles/TOF_MC.dir/src/RunAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/RunAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/RunAction.cc -o CMakeFiles/TOF_MC.dir/src/RunAction.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/DetectorConstruction.cc -o CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.s
 
 CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: /home/lux_n/TOF_MC/src/EventAction.cc
+CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc
 CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TOF_MC.dir/src/EventAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/EventAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/EventAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/EventAction.cc.o -c /home/lux_n/TOF_MC/src/EventAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TOF_MC.dir/src/EventAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/EventAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/EventAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/EventAction.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc
 
 CMakeFiles/TOF_MC.dir/src/EventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/EventAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/EventAction.cc > CMakeFiles/TOF_MC.dir/src/EventAction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc > CMakeFiles/TOF_MC.dir/src/EventAction.cc.i
 
 CMakeFiles/TOF_MC.dir/src/EventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/EventAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/EventAction.cc -o CMakeFiles/TOF_MC.dir/src/EventAction.cc.s
-
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOF_MC/src/SensitiveDetector.cc
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -c /home/lux_n/TOF_MC/src/SensitiveDetector.cc
-
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/SensitiveDetector.cc > CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i
-
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/SensitiveDetector.cc -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s
-
-CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: /home/lux_n/TOF_MC/src/PhysicsList.cc
-CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o -MF CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o -c /home/lux_n/TOF_MC/src/PhysicsList.cc
-
-CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/PhysicsList.cc > CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i
-
-CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/PhysicsList.cc -o CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc -o CMakeFiles/TOF_MC.dir/src/EventAction.cc.s
 
 CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOF_MC/src/PMTSD.cc
+CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc
 CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o -MF CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o -c /home/lux_n/TOF_MC/src/PMTSD.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o -MF CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc
 
 CMakeFiles/TOF_MC.dir/src/PMTSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/PMTSD.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOF_MC/src/PMTSD.cc > CMakeFiles/TOF_MC.dir/src/PMTSD.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc > CMakeFiles/TOF_MC.dir/src/PMTSD.cc.i
 
 CMakeFiles/TOF_MC.dir/src/PMTSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/PMTSD.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOF_MC/src/PMTSD.cc -o CMakeFiles/TOF_MC.dir/src/PMTSD.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc -o CMakeFiles/TOF_MC.dir/src/PMTSD.cc.s
+
+CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: CMakeFiles/TOF_MC.dir/flags.make
+CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc
+CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o -MF CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc
+
+CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc > CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.i
+
+CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc -o CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.s
+
+CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
+CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc
+CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc
+
+CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc > CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.i
+
+CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc -o CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.s
+
+CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
+CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc
+CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TOF_MC.dir/src/RunAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/RunAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/RunAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/RunAction.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc
+
+CMakeFiles/TOF_MC.dir/src/RunAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/RunAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc > CMakeFiles/TOF_MC.dir/src/RunAction.cc.i
+
+CMakeFiles/TOF_MC.dir/src/RunAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/RunAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc -o CMakeFiles/TOF_MC.dir/src/RunAction.cc.s
+
+CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/flags.make
+CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc
+CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc
+
+CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc > CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i
+
+CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s
 
 # Object files for target TOF_MC
 TOF_MC_OBJECTS = \
 "CMakeFiles/TOF_MC.dir/main.cc.o" \
 "CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o" \
+"CMakeFiles/TOF_MC.dir/src/EventAction.cc.o" \
+"CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o" \
+"CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o" \
 "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o" \
-"CMakeFiles/TOF_MC.dir/src/EventAction.cc.o" \
-"CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o" \
-"CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o" \
-"CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o"
+"CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
 
 # External object files for target TOF_MC
 TOF_MC_EXTERNAL_OBJECTS =
 
 TOF_MC: CMakeFiles/TOF_MC.dir/main.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o
+TOF_MC: CMakeFiles/TOF_MC.dir/src/EventAction.cc.o
+TOF_MC: CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o
+TOF_MC: CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/RunAction.cc.o
-TOF_MC: CMakeFiles/TOF_MC.dir/src/EventAction.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o
-TOF_MC: CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o
-TOF_MC: CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/build.make
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4Tree.so
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4FR.so
@@ -245,7 +245,7 @@ TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4clhep.so
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4ptl.so.3.0.0
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4zlib.so
 TOF_MC: CMakeFiles/TOF_MC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lux_n/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TOF_MC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TOF_MC"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TOF_MC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -257,6 +257,6 @@ CMakeFiles/TOF_MC.dir/clean:
 .PHONY : CMakeFiles/TOF_MC.dir/clean
 
 CMakeFiles/TOF_MC.dir/depend:
-	cd /home/lux_n/TOF_MC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lux_n/TOF_MC /home/lux_n/TOF_MC /home/lux_n/TOF_MC/build /home/lux_n/TOF_MC/build /home/lux_n/TOF_MC/build/CMakeFiles/TOF_MC.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/lux_n/TOFrepo/TOF_MC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lux_n/TOFrepo/TOF_MC /home/lux_n/TOFrepo/TOF_MC /home/lux_n/TOFrepo/TOF_MC/build /home/lux_n/TOFrepo/TOF_MC/build /home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles/TOF_MC.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/TOF_MC.dir/depend
 

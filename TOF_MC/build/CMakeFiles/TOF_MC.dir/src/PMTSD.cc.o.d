@@ -1,5 +1,6 @@
-CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOF_MC/src/PMTSD.cc \
- /usr/include/stdc-predef.h /home/lux_n/TOF_MC/include/PMTSD.hh \
+CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: \
+ /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/PMTSD.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
@@ -361,6 +362,8 @@ CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOF_MC/src/PMTSD.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4OpticalPhoton.hh \

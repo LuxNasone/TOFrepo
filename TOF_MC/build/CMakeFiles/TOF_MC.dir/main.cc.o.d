@@ -1,6 +1,6 @@
-CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOF_MC/main.cc \
+CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
  /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/DetectorConstruction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/DetectorConstruction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserDetectorConstruction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \
@@ -230,7 +230,7 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOF_MC/main.cc \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/lux_n/TOF_MC/include/PrimaryGeneratorAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/PrimaryGeneratorAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleGun.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VPrimaryGenerator.hh \
@@ -281,12 +281,12 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOF_MC/main.cc \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
- /home/lux_n/TOF_MC/include/RunAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/RunAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserRunAction.hh \
- /home/lux_n/TOF_MC/include/EventAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
- /home/lux_n/TOF_MC/include/SensitiveDetector.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
@@ -383,7 +383,7 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOF_MC/main.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
- /home/lux_n/TOF_MC/include/PhysicsList.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/PhysicsList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/FTFP_BERT.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicsConstructor.hh \

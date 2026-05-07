@@ -22,7 +22,9 @@ int main(int argc, char** argv)
 
     runManager->SetUserAction(eventAction);
 
-    runManager->SetUserInitialization(new DetectorConstruction());
+    auto detector = new DetectorConstruction(eventAction);
+
+    runManager->SetUserInitialization(detector);
 
     runManager->SetUserAction(new PrimaryGeneratorAction());
 

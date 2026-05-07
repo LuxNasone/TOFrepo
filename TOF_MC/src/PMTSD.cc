@@ -1,4 +1,5 @@
 #include "PMTSD.hh"
+#include "EventAction.hh"
 
 #include "G4Step.hh"
 #include "G4Track.hh"
@@ -6,51 +7,31 @@
 #include "G4SystemOfUnits.hh"
 #include "G4AnalysisManager.hh"
 
-PMTSD::PMTSD(const G4String& name)
-: G4VSensitiveDetector(name) {}
+PMTSD::PMTSD(const G4String& name, EventAction* eventAction)
+: G4VSensitiveDetector(name), fEventAction(eventAction) {}
 
 PMTSD::~PMTSD() {}
-
+ 
 G4bool PMTSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 {
-    G4Track* track = step->GetTrack();
+ 
+    if (!fEventAction) return false;
 
-    // only optical photons
-    if(track->GetDefinition() != G4OpticalPhoton::Definition())
-        return false;
+    auto track = step->GetTrack();
 
-    // only entry into sensitive volume
-    if(step->GetPreStepPoint()->GetStepStatus() != fGeomBoundary)
+    if (track->GetDefinition() != G4OpticalPhoton::Definition())
         return false;
 
     G4double time = step->GetPreStepPoint()->GetGlobalTime();
 
-    // PMT id
-    G4int copyNo =
-        step->GetPreStepPoint()
-        ->GetTouchableHandle()
-        ->GetCopyNumber();
+    auto touch = step->GetPreStepPoint()->GetTouchableHandle();
+    G4int copyNo = touch->GetCopyNumber(1);
 
-    // ---- FIRST PHOTON LOGIC (IMPORTANT FIX) ----
-    static std::map<G4int, G4double> firstHitTime;
-
-    if(firstHitTime.find(copyNo) == firstHitTime.end())
-    {
-        firstHitTime[copyNo] = time;
-    }
-    else
-    {
-        return false; // ignore later photons
-    }
-
-    // ---- SAVE TO ROOT ----
-    auto analysisManager = G4AnalysisManager::Instance();
-
-    analysisManager->FillNtupleIColumn(0, copyNo);
-    analysisManager->FillNtupleDColumn(1, time/ns);
-    analysisManager->AddNtupleRow();
+    if (copyNo == 0) fEventAction->SetTimeBar1(time);
+    else if (copyNo == 1) fEventAction->SetTimeBar2(time);
+    else if (copyNo == 2) fEventAction->SetTimeBarSmall(time);
 
     track->SetTrackStatus(fStopAndKill);
-
     return true;
 }
+

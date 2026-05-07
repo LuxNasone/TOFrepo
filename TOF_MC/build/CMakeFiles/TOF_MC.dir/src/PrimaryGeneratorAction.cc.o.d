@@ -1,7 +1,7 @@
 CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: \
- /home/lux_n/TOF_MC/src/PrimaryGeneratorAction.cc \
+ /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc \
  /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/PrimaryGeneratorAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/PrimaryGeneratorAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleGun.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \

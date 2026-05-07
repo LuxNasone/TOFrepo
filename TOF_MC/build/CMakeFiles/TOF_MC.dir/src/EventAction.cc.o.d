@@ -1,6 +1,6 @@
 CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: \
- /home/lux_n/TOF_MC/src/EventAction.cc /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/EventAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \

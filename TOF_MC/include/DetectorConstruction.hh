@@ -3,11 +3,13 @@
 
 #include "G4VUserDetectorConstruction.hh"
 
+class EventAction;
+
 class DetectorConstruction : public G4VUserDetectorConstruction{
 
     public:
 
-        DetectorConstruction();
+        DetectorConstruction(EventAction* eventAction);
 
         virtual ~DetectorConstruction();
 
@@ -17,9 +19,12 @@ class DetectorConstruction : public G4VUserDetectorConstruction{
 
     private:
     
-        G4LogicalVolume* fScoringVolume = nullptr;
+        G4LogicalVolume* fScoringVolume;
 
-        G4LogicalVolume* fLogicPMT = nullptr;
+        G4LogicalVolume* fLogicPMT;
+        G4LogicalVolume* fLogicCathode;
+
+        EventAction* fEventAction;
 
 };
 

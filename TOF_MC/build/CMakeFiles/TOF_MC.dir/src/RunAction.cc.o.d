@@ -1,6 +1,6 @@
 CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: \
- /home/lux_n/TOF_MC/src/RunAction.cc /usr/include/stdc-predef.h \
- /home/lux_n/TOF_MC/include/RunAction.hh \
+ /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/RunAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserRunAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Types.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4GlobalConfig.hh \
