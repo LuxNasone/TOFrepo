@@ -60,16 +60,25 @@ G4double PrimaryGeneratorAction::SampleMuonEnergy(){
 G4ThreeVector PrimaryGeneratorAction::SampleMuonDir(){
 
     G4double txBar = (G4UniformRand() - 0.5) * 2.795*m;
-    G4ThreeVector startPos(txBar, 0, 165*cm);
+
+    G4double tyBar = (G4UniformRand() - 0.5) * 4*cm;
+
+    G4ThreeVector startPos(txBar, tyBar, 165*cm);
+
     fParticleGun->SetParticlePosition(startPos);
 
     // Slab centrata in (0, sy/2, 0) con dimensioni sx x sy x sz
+
     G4double sx = 5.9*cm;
+
     G4double sy = 20.6*cm;
     
     // Target: punto casuale sulla faccia superiore della slab
+
     G4double txSlab = (G4UniformRand() - 0.5) * sx;
+
     G4double tySlab = (G4UniformRand()) * sy; // centro + offset
+    
     G4double tzSlab = 1.1*cm / 2; // faccia superiore della slab
 
     G4ThreeVector targetPoint(txSlab, tySlab, tzSlab);

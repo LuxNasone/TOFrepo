@@ -297,29 +297,29 @@ src/RunAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/RunAction.cc.s
 .PHONY : src/RunAction.cc.s
 
-src/SensitiveDetector.o: src/SensitiveDetector.cc.o
-.PHONY : src/SensitiveDetector.o
+src/SteppingAction.o: src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.o
 
 # target to build an object file
-src/SensitiveDetector.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o
-.PHONY : src/SensitiveDetector.cc.o
+src/SteppingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.cc.o
 
-src/SensitiveDetector.i: src/SensitiveDetector.cc.i
-.PHONY : src/SensitiveDetector.i
+src/SteppingAction.i: src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.i
 
 # target to preprocess a source file
-src/SensitiveDetector.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i
-.PHONY : src/SensitiveDetector.cc.i
+src/SteppingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.cc.i
 
-src/SensitiveDetector.s: src/SensitiveDetector.cc.s
-.PHONY : src/SensitiveDetector.s
+src/SteppingAction.s: src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.s
 
 # target to generate assembly for a file
-src/SensitiveDetector.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s
-.PHONY : src/SensitiveDetector.cc.s
+src/SteppingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.cc.s
 
 # Help Target
 help:
@@ -351,9 +351,9 @@ help:
 	@echo "... src/RunAction.o"
 	@echo "... src/RunAction.i"
 	@echo "... src/RunAction.s"
-	@echo "... src/SensitiveDetector.o"
-	@echo "... src/SensitiveDetector.i"
-	@echo "... src/SensitiveDetector.s"
+	@echo "... src/SteppingAction.o"
+	@echo "... src/SteppingAction.i"
+	@echo "... src/SteppingAction.s"
 .PHONY : help
 
 

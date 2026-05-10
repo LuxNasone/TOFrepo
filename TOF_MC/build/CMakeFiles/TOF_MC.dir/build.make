@@ -167,19 +167,19 @@ CMakeFiles/TOF_MC.dir/src/RunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/RunAction.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc -o CMakeFiles/TOF_MC.dir/src/RunAction.cc.s
 
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/flags.make
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o: CMakeFiles/TOF_MC.dir/flags.make
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o: CMakeFiles/TOF_MC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lux_n/TOFrepo/TOF_MC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o -MF CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o.d -o CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o -c /home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc
 
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc > CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.i
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc > CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.i
 
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc -o CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.s
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc -o CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.s
 
 # Object files for target TOF_MC
 TOF_MC_OBJECTS = \
@@ -190,7 +190,7 @@ TOF_MC_OBJECTS = \
 "CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o" \
 "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o" \
-"CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
+"CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o"
 
 # External object files for target TOF_MC
 TOF_MC_EXTERNAL_OBJECTS =
@@ -202,7 +202,7 @@ TOF_MC: CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/src/RunAction.cc.o
-TOF_MC: CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o
+TOF_MC: CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o
 TOF_MC: CMakeFiles/TOF_MC.dir/build.make
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4Tree.so
 TOF_MC: /home/lux_n/geant4/geant4-install/lib/libG4FR.so

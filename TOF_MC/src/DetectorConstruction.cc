@@ -1,5 +1,4 @@
 #include "DetectorConstruction.hh"
-#include "SensitiveDetector.hh"
 #include "PMTSD.hh"
 #include "EventAction.hh"
 
@@ -83,6 +82,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     G4double abslen[n] = {2.1*m, 2.1*m};
 
+    G4double scintSpectrum[n] = {1.0, 1.0};
+
     //Optical properties table
 
     auto mpt = new G4MaterialPropertiesTable();
@@ -91,14 +92,12 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     mpt->AddProperty("ABSLENGTH", e, abslen, n);
 
-    G4double scintSpectrum[n] = {1.0, 1.0};
     mpt->AddProperty("SCINTILLATIONCOMPONENT1", e, scintSpectrum, n);
 
     //Scintillation yield
 
-    mpt->AddConstProperty("SCINTILLATIONYIELD", 108./MeV);
+    mpt->AddConstProperty("SCINTILLATIONYIELD", 10800./MeV * 0.01);
     
-
     //Number of decay component
 
     mpt->AddConstProperty("SCINTILLATIONYIELD1", 1.0);
@@ -115,17 +114,22 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     BC408->SetMaterialPropertiesTable(mpt);
 
-    // GLASS per PMT
+    //Photocathode material 
+    auto Bialkali = new G4Material("Bialkali", 3.45*g/cm3, 3);
 
-    auto glass = nist->FindOrBuildMaterial("G4_Pyrex_Glass");
+    Bialkali->AddElement(nist->FindOrBuildElement("Cs"), 1);
 
-    G4double rindexGlass[n] = {1.47, 1.47};
+    Bialkali->AddElement(nist->FindOrBuildElement("K"), 2);
 
-    auto glassMPT = new G4MaterialPropertiesTable();
+    Bialkali->AddElement(nist->FindOrBuildElement("Sb"), 1);
 
-    glassMPT->AddProperty("RINDEX", e, rindexGlass, n);
+    auto BialMPT = new G4MaterialPropertiesTable();
 
-    glass->SetMaterialPropertiesTable(glassMPT);
+    G4double rindexBial[n] = {3.2, 2.7};
+
+    BialMPT->AddProperty("RINDEX", e, rindexBial, n);
+
+    Bialkali->SetMaterialPropertiesTable(BialMPT);
 
     // Bar, x dimension
 
@@ -179,7 +183,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     auto solidCathode = new G4Tubs("Cathode", 0, r, 0.5*mm, 0, 360*deg);
 
-    fLogicCathode = new G4LogicalVolume(solidCathode, glass, "Cathode");
+    fLogicCathode = new G4LogicalVolume(solidCathode, Bialkali, "Cathode");
 
     new G4PVPlacement(roty, {-barX/2 - h/2, 0, 1.6 * m}, fLogicCathode, "Cathode1", logicEnv, false, 0);
 
@@ -187,7 +191,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     new G4PVPlacement(rotx, {0, sy + h/2, 0}, fLogicCathode, "Cathode3", logicEnv, false, 2);
 
-    //Some optical properties (reflectivity and quantum eff)
+    //Some optical properties (reflectivity and quantum eff) for cathode
 
     G4double reflectivity[n] = {0.0, 0.0};
 
@@ -238,18 +242,9 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
     return physWorld;
 }
 
-void DetectorConstruction::ConstructSDandField()
-{
+void DetectorConstruction::ConstructSDandField(){
 
     auto sdMan = G4SDManager::GetSDMpointer();
-
-    // SD scintillatore
-
-    auto scintSD = new SensitiveDetector("ScintSD");
-
-    sdMan->AddNewDetector(scintSD);
-
-    fScoringVolume->SetSensitiveDetector(scintSD);
 
     // SD catodo - un solo logical, copyNo del PMT parent distingue quale
 
@@ -258,4 +253,5 @@ void DetectorConstruction::ConstructSDandField()
     sdMan->AddNewDetector(pmtSD);
 
     fLogicCathode->SetSensitiveDetector(pmtSD);
+    
 }

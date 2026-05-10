@@ -2,8 +2,8 @@
 #include "PrimaryGeneratorAction.hh"
 #include "RunAction.hh"
 #include "EventAction.hh"
-#include "SensitiveDetector.hh"
 #include "PhysicsList.hh"
+#include "SteppingAction.hh"
 
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
@@ -27,6 +27,8 @@ int main(int argc, char** argv)
     runManager->SetUserInitialization(detector);
 
     runManager->SetUserAction(new PrimaryGeneratorAction());
+
+    runManager->SetUserAction(new SteppingAction(eventAction));
 
     auto* runAction = new RunAction();
 

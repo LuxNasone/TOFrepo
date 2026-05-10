@@ -231,7 +231,7 @@ CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/PMTSD.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4HCofThisEvent.hh \
@@ -364,10 +364,10 @@ CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
- /home/lux_n/TOFrepo/TOF_MC/include/PMTSD.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
  /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Box.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4GeomTypes.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4GeomConfig.hh \

@@ -13,8 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o.d"
   "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o"
   "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o.d"
-  "CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o"
-  "CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o.d"
+  "CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o"
+  "CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o.d"
   "TOF_MC"
   "TOF_MC.pdb"
 )

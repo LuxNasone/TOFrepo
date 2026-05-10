@@ -15,7 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lux_n/TOFrepo/TOF_MC/src/PhysicsList.cc" "CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o" "gcc" "CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o.d"
   "/home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc" "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o" "gcc" "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o.d"
   "/home/lux_n/TOFrepo/TOF_MC/src/RunAction.cc" "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o" "gcc" "CMakeFiles/TOF_MC.dir/src/RunAction.cc.o.d"
-  "/home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc" "CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o" "gcc" "CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o.d"
+  "/home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc" "CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o" "gcc" "CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

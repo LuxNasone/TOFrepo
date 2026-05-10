@@ -7,7 +7,7 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
   /home/lux_n/TOFrepo/TOF_MC/include/PhysicsList.hh \
   /home/lux_n/TOFrepo/TOF_MC/include/PrimaryGeneratorAction.hh \
   /home/lux_n/TOFrepo/TOF_MC/include/RunAction.hh \
-  /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
+  /home/lux_n/TOFrepo/TOF_MC/include/SteppingAction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Plane3D.h \
@@ -102,7 +102,6 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Cache.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4CacheDetails.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ClassificationOfNewTrack.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Color.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Colour.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Cons.hh \
@@ -240,7 +239,6 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SceneHandlerList.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SceneList.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SceneTreeItem.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SmartTrackStack.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.icc \
@@ -343,11 +341,8 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VPrimaryGenerator.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VProcess.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VRML2File.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VSceneHandler.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VSceneHandler.icc \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VSolid.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VSolid.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VStateDependent.hh \
@@ -718,7 +713,6 @@ CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: /home/lux_n/TOFrepo/TOF_MC/
   /home/lux_n/TOFrepo/TOF_MC/include/DetectorConstruction.hh \
   /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
   /home/lux_n/TOFrepo/TOF_MC/include/PMTSD.hh \
-  /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
@@ -3257,8 +3251,9 @@ CMakeFiles/TOF_MC.dir/src/RunAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/RunActi
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
-CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc \
-  /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
+CMakeFiles/TOF_MC.dir/src/SteppingAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc \
+  /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
+  /home/lux_n/TOFrepo/TOF_MC/include/SteppingAction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
@@ -3289,7 +3284,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Allocator.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4AllocatorPool.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4AutoLock.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4DensityEffectCalculator.hh \
@@ -3304,7 +3298,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ExceptionSeverity.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4GeomSplitter.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4GlobalConfig.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4HCofThisEvent.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4IEEE754.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamElm.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamMat.hh \
@@ -3342,7 +3335,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Region.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4RotationMatrix.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SandiaTable.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4StepPoint.hh \
@@ -3351,7 +3343,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingControl.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4String.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4String.icc \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Threading.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHandle.hh \
@@ -3363,13 +3354,10 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackVector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Transform3D.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4Types.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VHit.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VHitsCollection.hh \
+  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
+  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserSteppingAction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.icc \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
-  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VTouchable.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \
@@ -3678,6 +3666,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 
+/home/lux_n/TOFrepo/TOF_MC/src/SteppingAction.cc:
+
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Run.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonMinus.hh:
@@ -3746,6 +3736,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4GenericFileManager.icc:
 
+/home/lux_n/geant4/geant4-install/include/Geant4/G4GenericAnalysisManager.hh:
+
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Fcn.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4BinScheme.hh:
@@ -3754,9 +3746,15 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4AnalysisManager.hh:
 
+/home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh:
+
 /home/lux_n/geant4/geant4-install/include/Geant4/G4ToolsAnalysisManager.icc:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4SDManager.hh:
 
@@ -3994,15 +3992,11 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /usr/include/c++/13/istream:
 
-/usr/include/c++/13/iosfwd:
+/home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/b1:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+/usr/include/errno.h:
 
-/usr/include/c++/13/ios:
-
-/usr/include/c++/13/iomanip:
-
-/usr/include/c++/13/future:
+/home/lux_n/geant4/geant4-install/include/Geant4/G4String.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingControl.hh:
 
@@ -4039,8 +4033,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4SceneHandlerList.hh:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4RunManager.hh:
 
@@ -4149,6 +4141,10 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleDefinition.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/DualRand.h:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4Point3D.hh:
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
@@ -4288,6 +4284,10 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/Randomize.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/13/ios:
+
 /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleTableIterator.hh:
@@ -4386,10 +4386,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h:
 
-/home/lux_n/geant4/geant4-install/include/Geant4/G4GenericAnalysisManager.hh:
-
-/home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh:
-
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h:
 
 /usr/include/c++/13/bits/concept_check.h:
@@ -4421,6 +4417,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4TessellatedSolid.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4UserSteppingAction.hh:
+
+/home/lux_n/TOFrepo/TOF_MC/include/SteppingAction.hh:
 
 /usr/include/c++/13/bits/new_allocator.h:
 
@@ -4461,6 +4459,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialTable.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Voxelizer.icc:
+
+/usr/include/c++/13/future:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -4506,6 +4506,10 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationY.icc:
 
+/home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingManager.hh:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
 /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h1:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4THitsMap.hh:
@@ -4521,8 +4525,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4OpenGLImmediateX.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/FTFP_BERT.hh:
-
-/usr/include/c++/13/bits/atomic_futex.h:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4PVPlacement.hh:
 
@@ -4605,12 +4607,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVectorType.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.icc:
-
-/usr/include/c++/13/initializer_list:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4VHitsCollection.hh:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4Cons.icc:
 
 /usr/include/c++/13/bits/std_mutex.h:
 
@@ -4758,10 +4754,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h:
 
-/home/lux_n/geant4/geant4-install/include/Geant4/G4Point3D.hh:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh:
-
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Colour.hh:
 
 /usr/include/c++/13/tr1/modified_bessel_func.tcc:
@@ -4805,18 +4797,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4AffineTransform.icc:
 
 /usr/include/c++/13/bits/stl_function.h:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingManager.hh:
-
-/usr/include/c++/13/bits/locale_facets_nonio.tcc:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/b1:
-
-/usr/include/errno.h:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4String.hh:
-
-/home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh:
 
 /usr/include/c++/13/ostream:
 
@@ -5014,8 +4994,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
-/home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh:
-
 /home/lux_n/geant4/geant4-install/include/Geant4/G4VTrajectory.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4VTree.hh:
@@ -5057,6 +5035,12 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4ElementVector.hh:
 
 /usr/include/c++/13/bits/std_thread.h:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4VHitsCollection.hh:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4Cons.icc:
+
+/usr/include/c++/13/initializer_list:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4VSteppingVerbose.hh:
 
@@ -5109,6 +5093,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /usr/include/c++/13/bits/algorithmfwd.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/atomic_futex.h:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Polycone.hh:
 
@@ -5278,8 +5264,6 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 
 /usr/include/c++/13/ext/atomicity.h:
 
-/home/lux_n/TOFrepo/TOF_MC/src/SensitiveDetector.cc:
-
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Scene.hh:
 
 /usr/include/c++/13/ext/string_conversions.h:
@@ -5287,3 +5271,7 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /usr/include/c++/13/fstream:
 
 /usr/include/c++/13/functional:
+
+/usr/include/c++/13/iomanip:
+
+/usr/include/c++/13/iosfwd:

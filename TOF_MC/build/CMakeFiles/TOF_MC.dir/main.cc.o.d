@@ -285,104 +285,8 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserRunAction.hh \
  /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
- /home/lux_n/TOFrepo/TOF_MC/include/SensitiveDetector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/geomdefs.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4RotationMatrix.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationX.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationX.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationY.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationY.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4GeomSplitter.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/geomwdefs.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4StepPoint.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingControl.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4StepStatus.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHandle.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VTouchable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHistory.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistory.hh \
- /usr/include/assert.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AffineTransform.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Transform3D.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AffineTransform.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevel.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevelRep.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevelRep.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevel.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistoryPool.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistory.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4LogicalVolume.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Region.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Region.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4LogicalVolume.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHistory.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ReferenceCountedHandle.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Material.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Element.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ElementTable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ElementVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamElm.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Isotope.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4IsotopeVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamMat.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DensityEffectCalculator.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertiesTable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertiesIndex.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertyVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsFreeVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVector.hh \
- /usr/include/c++/13/fstream \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Log.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4IEEE754.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVectorType.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVector.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialTable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SandiaTable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4OrderedTable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4StepPoint.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/trkdefs.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DynamicParticle.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ElectronOccupancy.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4LorentzVector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DynamicParticle.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackStatus.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsModelCatalog.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VHit.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
  /home/lux_n/TOFrepo/TOF_MC/include/PhysicsList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/FTFP_BERT.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
@@ -406,10 +310,17 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUPLSplitter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/rundefs.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserPhysicsList.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsModelCatalog.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ProductionCutsTable.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialCutsCouple.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ProductionCuts.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4MCCIndexConversionTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Region.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4GeomSplitter.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/geomwdefs.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Region.icc \
+ /home/lux_n/TOFrepo/TOF_MC/include/SteppingAction.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4UserSteppingAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4RunManager.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Event.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4EventManager.hh \
@@ -421,6 +332,91 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SmartTrackStack.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SubEventTrackStack.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SubEvent.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/trkdefs.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4LogicalVolume.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/geomdefs.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4RotationMatrix.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationX.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationX.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationY.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationY.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4LogicalVolume.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4DynamicParticle.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ElectronOccupancy.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Log.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4IEEE754.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4LorentzVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4DynamicParticle.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackStatus.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHandle.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VTouchable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHistory.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistory.hh \
+ /usr/include/assert.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4AffineTransform.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Transform3D.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4AffineTransform.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevel.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevelRep.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevelRep.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationLevel.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistoryPool.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4NavigationHistory.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4TouchableHistory.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ReferenceCountedHandle.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Material.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Element.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ElementTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4ElementVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamElm.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Isotope.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4IsotopeVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4IonisParamMat.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4DensityEffectCalculator.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertiesTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertiesIndex.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialPropertyVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsFreeVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVector.hh \
+ /usr/include/c++/13/fstream \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVectorType.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4PhysicsVector.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MaterialTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4SandiaTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4OrderedTable.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4DataVector.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4StepPoint.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingControl.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4StepStatus.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4StepPoint.icc \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.icc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4PrimaryTransformer.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4TrackingManager.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SteppingManager.hh \
@@ -626,6 +622,7 @@ CMakeFiles/TOF_MC.dir/main.cc.o: /home/lux_n/TOFrepo/TOF_MC/main.cc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4HitFilterFactories.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VFilter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VModelFactory.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VHit.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4DigiFilterFactories.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VDigi.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4TrajectoryFilterFactories.hh \

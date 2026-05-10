@@ -2,8 +2,8 @@
 #include "G4AnalysisManager.hh"
 #include "G4Run.hh"
 
-RunAction::RunAction()
-{
+RunAction::RunAction(){
+
     auto analysis = G4AnalysisManager::Instance();
 
     analysis->SetVerboseLevel(1);
@@ -12,25 +12,42 @@ RunAction::RunAction()
 
 RunAction::~RunAction() {}
 
-void RunAction::BeginOfRunAction(const G4Run*)
-{
+void RunAction::BeginOfRunAction(const G4Run*){
+
     auto analysis = G4AnalysisManager::Instance();
 
-    analysis->OpenFile("/home/lux_n/TOFrepo/TOF_MC/tof.root");
+    analysis->OpenFile("/home/lux_n/TOFrepo/TOF_MC/TOF.root");
 
-    analysis->CreateNtuple("tof", "TOF data");
+    analysis->CreateNtuple("TOF", "TOF data");
 
-    analysis->CreateNtupleDColumn("t1");
-    analysis->CreateNtupleDColumn("t2");
-    analysis->CreateNtupleDColumn("t3");
+    analysis->CreateNtupleDColumn("t_PMT01");
+
+    analysis->CreateNtupleDColumn("t_PMT02");
+
+    analysis->CreateNtupleDColumn("t_PMT03");
+
+    analysis->CreateNtupleDColumn("x_Bar");
+
+    analysis->CreateNtupleDColumn("y_Bar");
+
+    analysis->CreateNtupleDColumn("z_Bar");
+
+    analysis->CreateNtupleDColumn("x_Surf");
+
+    analysis->CreateNtupleDColumn("y_Surf");
+
+    analysis->CreateNtupleDColumn("z_Surf");
 
     analysis->FinishNtuple();
+    
 }
 
-void RunAction::EndOfRunAction(const G4Run*)
-{
+void RunAction::EndOfRunAction(const G4Run*){
+
     auto analysis = G4AnalysisManager::Instance();
 
     analysis->Write();
+
     analysis->CloseFile();
+
 }
