@@ -1586,9 +1586,55 @@ CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/DualRand.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/JamesRandom.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/MixMaxRng.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBit.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBit.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandExpZiggurat.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandExponential.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandExponential.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandFlat.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandFlat.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGamma.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGamma.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGauss.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGauss.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGaussZiggurat.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandLandau.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandLandau.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/Random.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/Random.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.icc \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/Randomize.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RanecuEngine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/Ranlux64Engine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RanluxEngine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RanluxppEngine.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RanshiEngine.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Utility/memory.h \
+  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Utility/thread_local.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
@@ -1736,6 +1782,7 @@ CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PMTSD.cc \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VTouchable.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \
+  /home/lux_n/geant4/geant4-install/include/Geant4/Randomize.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/geomdefs.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/geomwdefs.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
@@ -2425,6 +2472,7 @@ CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/Physi
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: /home/lux_n/TOFrepo/TOF_MC/src/PrimaryGeneratorAction.cc \
+  /home/lux_n/TOFrepo/TOF_MC/include/DetectorConstruction.hh \
   /home/lux_n/TOFrepo/TOF_MC/include/PrimaryGeneratorAction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/DualRand.h \
   /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/JamesRandom.h \
@@ -2488,6 +2536,7 @@ CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: /home/lux_n/TOFrepo/TOF_M
   /home/lux_n/geant4/geant4-install/include/Geant4/G4GlobalConfig.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4HCofThisEvent.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonMinus.hh \
+  /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonPlus.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4PDefManager.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleDefinition.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleDefinition.icc \
@@ -2509,6 +2558,7 @@ CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: /home/lux_n/TOFrepo/TOF_M
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VHitsCollection.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VPrimaryGenerator.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VTrajectory.hh \
+  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserDetectorConstruction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
   /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \
@@ -4417,6 +4467,8 @@ CMakeFiles/TOF_MC.dir/src/SensitiveDetector.cc.o: /home/lux_n/TOFrepo/TOF_MC/src
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Track.icc:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/G4Para.icc:
+
+/home/lux_n/geant4/geant4-install/include/Geant4/G4MuonPlus.hh:
 
 /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandBit.icc:
 

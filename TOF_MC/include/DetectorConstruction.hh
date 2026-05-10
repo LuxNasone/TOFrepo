@@ -21,7 +21,6 @@ class DetectorConstruction : public G4VUserDetectorConstruction{
     
         G4LogicalVolume* fScoringVolume;
 
-        G4LogicalVolume* fLogicPMT;
         G4LogicalVolume* fLogicCathode;
 
         EventAction* fEventAction;

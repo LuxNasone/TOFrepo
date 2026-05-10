@@ -15,9 +15,13 @@ SensitiveDetector::~SensitiveDetector() {}
 G4bool SensitiveDetector::ProcessHits(G4Step* step, G4TouchableHistory*)
 {
 
-    G4double edep = step->GetTotalEnergyDeposit();
-    if(edep <= 0.) return false;
+   G4String vol = step->GetPreStepPoint()->GetPhysicalVolume()->GetName();
 
-    fTotalEdep += edep;
-    return true;
+   G4double edep = step->GetTotalEnergyDeposit();
+
+   if(edep <= 0.) {return false;}
+
+   fTotalEdep += edep;
+    
+   return true;
 }

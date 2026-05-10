@@ -23,11 +23,15 @@ void EventAction::BeginOfEventAction(const G4Event*){
 void EventAction::EndOfEventAction(const G4Event*)
 {
 
-    if (fTimeBar1 < 0 || fTimeBar2 < 0) return;
+    if (fTimeBar1 < 0 || fTimeBar2 < 0 || fTimeBarSmall < 0) return;
     
     auto analysis = G4AnalysisManager::Instance();
+
     analysis->FillNtupleDColumn(0, fTimeBar1 / ns);
+
     analysis->FillNtupleDColumn(1, fTimeBar2 / ns);
+
     analysis->FillNtupleDColumn(2, fTimeBarSmall / ns);
+    
     analysis->AddNtupleRow();
 }

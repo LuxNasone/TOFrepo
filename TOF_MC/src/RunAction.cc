@@ -16,7 +16,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
 {
     auto analysis = G4AnalysisManager::Instance();
 
-    analysis->OpenFile("tof.root");
+    analysis->OpenFile("/home/lux_n/TOFrepo/TOF_MC/tof.root");
 
     analysis->CreateNtuple("tof", "TOF data");
 

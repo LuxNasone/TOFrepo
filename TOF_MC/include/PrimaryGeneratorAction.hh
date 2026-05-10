@@ -20,6 +20,9 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction{
         G4ParticleGun* fParticleGun;
 
         G4double SampleMuonEnergy();
+
+        G4ThreeVector SampleMuonDir();
+
 };
 
 #endif

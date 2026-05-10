@@ -280,6 +280,8 @@ CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/DetectorConstruction.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserDetectorConstruction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleTableIterator.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ParticleTable.icc \
@@ -336,4 +338,5 @@ CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
  /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonMinus.hh
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonMinus.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4MuonPlus.hh
