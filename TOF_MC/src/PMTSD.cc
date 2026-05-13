@@ -33,6 +33,8 @@ G4bool PMTSD::ProcessHits(G4Step* step, G4TouchableHistory*){
 
     else if (copyNo == 2 && fEventAction->GetTimeBarSmall() < 0) fEventAction->SetTimeBarSmall(time);
 
+    else if (copyNo == 3 && fEventAction->GetTimeVeto() < 0) fEventAction->SetTimeVeto(time);
+
     track->SetTrackStatus(fStopAndKill);
 
     return true;

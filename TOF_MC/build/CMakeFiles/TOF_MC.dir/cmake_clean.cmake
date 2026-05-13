@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TOF_MC.dir/src/EventAction.cc.o.d"
   "CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o"
   "CMakeFiles/TOF_MC.dir/src/PMTSD.cc.o.d"
+  "CMakeFiles/TOF_MC.dir/src/PbSD.cc.o"
+  "CMakeFiles/TOF_MC.dir/src/PbSD.cc.o.d"
   "CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o"
   "CMakeFiles/TOF_MC.dir/src/PhysicsList.cc.o.d"
   "CMakeFiles/TOF_MC.dir/src/PrimaryGeneratorAction.cc.o"

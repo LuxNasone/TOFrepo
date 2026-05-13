@@ -1,8 +1,8 @@
-CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: \
- /home/lux_n/TOFrepo/TOF_MC/src/EventAction.cc /usr/include/stdc-predef.h \
- /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
+CMakeFiles/TOF_MC.dir/src/PbSD.cc.o: \
+ /home/lux_n/TOFrepo/TOF_MC/src/PbSD.cc /usr/include/stdc-predef.h \
+ /home/lux_n/TOFrepo/TOF_MC/include/PbSD.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ios.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Types.hh \
@@ -226,15 +226,8 @@ CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
- /home/lux_n/TOFrepo/TOF_MC/include/PbSD.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
@@ -244,6 +237,9 @@ CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VHitsCollection.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
+ /home/lux_n/geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/geomdefs.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4RotationMatrix.hh \
@@ -366,86 +362,4 @@ CMakeFiles/TOF_MC.dir/src/EventAction.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Event.hh \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/evtdefs.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PrimaryVertex.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4PrimaryParticle.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4DCofThisEvent.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VDigiCollection.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TrajectoryContainer.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VTrajectory.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SDManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4HCtable.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4SDStructure.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AnalysisManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4GenericAnalysisManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ToolsAnalysisManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VAnalysisManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AnalysisManagerState.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AnalysisVerbose.hh \
- /usr/include/c++/13/array /usr/include/c++/13/compare \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4AnalysisUtilities.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VTBaseHnManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4HnInformation.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4BinScheme.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Fcn.hh \
- /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VAnalysisManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4HnManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4BaseAnalysisManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NtupleBookingManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/ntuple_booking \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/cids \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/cid \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/typedefs \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/forit \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4NtupleBookingManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VNtupleManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VFileManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4BaseFileManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4VTHnFileManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TH1ToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnMessenger.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4UImessenger.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4UIdirectory.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4UIcommand.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ApplicationState.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4UIparameter.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnToolsManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4THnMessenger.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4Tokenizer.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TH2ToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TH3ToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TP1ToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4TP2ToolsManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h1d \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h1 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/b1 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/base_histo \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/histo_data \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/axes \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/axis \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/eqT \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h2d \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h2 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/b2 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h3d \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/h3 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/b3 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/p1d \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/p1 \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/profile_data \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/p2d \
- /home/lux_n/geant4/geant4-install/include/Geant4/tools/histo/p2 \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4ToolsAnalysisManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4GenericAnalysisManager.icc \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4GenericFileManager.hh \
- /home/lux_n/geant4/geant4-install/include/Geant4/G4GenericFileManager.icc
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh
