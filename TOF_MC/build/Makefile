@@ -225,6 +225,30 @@ src/PMTSD.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/PMTSD.cc.s
 .PHONY : src/PMTSD.cc.s
 
+src/PbSD.o: src/PbSD.cc.o
+.PHONY : src/PbSD.o
+
+# target to build an object file
+src/PbSD.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/PbSD.cc.o
+.PHONY : src/PbSD.cc.o
+
+src/PbSD.i: src/PbSD.cc.i
+.PHONY : src/PbSD.i
+
+# target to preprocess a source file
+src/PbSD.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/PbSD.cc.i
+.PHONY : src/PbSD.cc.i
+
+src/PbSD.s: src/PbSD.cc.s
+.PHONY : src/PbSD.s
+
+# target to generate assembly for a file
+src/PbSD.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TOF_MC.dir/build.make CMakeFiles/TOF_MC.dir/src/PbSD.cc.s
+.PHONY : src/PbSD.cc.s
+
 src/PhysicsList.o: src/PhysicsList.cc.o
 .PHONY : src/PhysicsList.o
 
@@ -342,6 +366,9 @@ help:
 	@echo "... src/PMTSD.o"
 	@echo "... src/PMTSD.i"
 	@echo "... src/PMTSD.s"
+	@echo "... src/PbSD.o"
+	@echo "... src/PbSD.i"
+	@echo "... src/PbSD.s"
 	@echo "... src/PhysicsList.o"
 	@echo "... src/PhysicsList.i"
 	@echo "... src/PhysicsList.s"

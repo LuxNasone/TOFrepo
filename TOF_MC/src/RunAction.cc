@@ -38,6 +38,12 @@ void RunAction::BeginOfRunAction(const G4Run*){
 
     analysis->CreateNtupleDColumn("z_Surf");
 
+    analysis->CreateNtupleDColumn("t_PMT04");
+
+    analysis->CreateNtupleDColumn("E_Pb");
+
+    analysis->CreateNtupleDColumn("TrackLengthPb");
+
     analysis->FinishNtuple();
     
 }

@@ -29,6 +29,10 @@ public:
 
     G4double GetTimeBarSmall(){return fTimeBarSmall;}
 
+    void SetTimeVeto(G4double t){fTimeVeto = t;}
+
+    G4double GetTimeVeto(){return fTimeVeto;}
+
     void SetHitBarPos(G4ThreeVector pos)  { fHitBarPos = pos; }
 
     void SetHitSurfPos(G4ThreeVector pos) { fHitSurfPos = pos; }
@@ -41,9 +45,15 @@ private:
 
     G4double fTimeBarSmall;
 
+    G4double fTimeVeto;
+
     G4ThreeVector fHitBarPos;
     
     G4ThreeVector fHitSurfPos;
+
+    G4double fEdepPb = 0.;
+
+    G4double fTrackLenPb = 0.;
 };
 
 #endif

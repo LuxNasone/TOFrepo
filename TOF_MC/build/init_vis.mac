@@ -23,6 +23,8 @@
 /vis/geometry/set/colour Env 0.6 0.6 0.9 0.4
 /vis/geometry/set/colour Bar 0.9 0.2 0.2 1.0
 /vis/geometry/set/colour Surf 0.2 0.8 0.2 1.0
+/vis/geometry/set/colour Lead 0.9 0.2 0.2 1.0
+/vis/geometry/set/colour Veto 0.2 0.8 0.2 1.0
 
 # Stile solido (fondamentale per vedere i volumi)
 /vis/viewer/set/style surface
@@ -36,4 +38,4 @@
 /vis/viewer/flush
 /tracking/storeTrajectory 0
 
-/run/beamOn 100000
+/run/beamOn 10000

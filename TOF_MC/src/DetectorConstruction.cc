@@ -1,5 +1,6 @@
 #include "DetectorConstruction.hh"
 #include "PMTSD.hh"
+#include "PbSD.hh"
 #include "EventAction.hh"
 
 #include "G4Box.hh"
@@ -153,7 +154,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     // Little scintillating slab dimensions
 
-    G4double sx = 5.9 * cm, sy = 20.6 * cm, sz = 1.1 * cm;
+    G4double sx = 5.9 * cm, sy = 19.5 * cm, sz = 1.2 * cm;
 
     //Creating scintillating slab
 
@@ -162,6 +163,28 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
     auto logicSurf = new G4LogicalVolume(solidSurf, BC408, "Surf");
 
     auto physSurf = new G4PVPlacement(nullptr, {0, sy/2, 0}, logicSurf, "Surf", logicEnv, false, 0);
+
+    //Big scintillating slab
+
+    G4double vx = 40. *cm, vy = 51.6 * cm, vz = 1. * cm;
+
+    auto solidVeto = new G4Box("Veto", vx/2, vy/2, vz/2);
+
+    auto logicVeto = new G4LogicalVolume(solidVeto, BC408, "Veto");
+
+    auto physVeto = new G4PVPlacement(nullptr, {0, vy/2, -12.5 * cm}, logicVeto, "Veto", logicEnv, false, 0);
+
+    //Pb slab 
+
+    G4double pz = 2 * cm;
+
+    G4Material* lead = nist->FindOrBuildMaterial("G4_Pb");
+
+    auto solidPb = new G4Box("Lead", vx/2, vy/2, pz/2);
+
+    fLogicPb = new G4LogicalVolume(solidPb, lead, "Lead");
+
+    auto physPb = new G4PVPlacement(nullptr, {0, vy/2, -8.5 * cm}, fLogicPb, "Lead", logicEnv, false, 0);
 
     //Cathode (PMT) geometry (cylindrical)
 
@@ -190,6 +213,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
     new G4PVPlacement(roty, {barX/2 +  h/2, 0, 1.6 * m}, fLogicCathode, "Cathode2", logicEnv, false, 1);
 
     new G4PVPlacement(rotx, {0, sy + h/2, 0}, fLogicCathode, "Cathode3", logicEnv, false, 2);
+
+    new G4PVPlacement(roty, {vx/2, vy/2, -12.5 * cm}, fLogicCathode, "Cathode4", logicEnv, false, 3);
 
     //Some optical properties (reflectivity and quantum eff) for cathode
 
@@ -239,6 +264,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct(){
 
     new G4LogicalSkinSurface("SurfSkin", logicSurf, opSurface);
 
+    new G4LogicalSkinSurface("VetoSkin", logicVeto, opSurface);
+
     return physWorld;
 }
 
@@ -253,5 +280,11 @@ void DetectorConstruction::ConstructSDandField(){
     sdMan->AddNewDetector(pmtSD);
 
     fLogicCathode->SetSensitiveDetector(pmtSD);
+
+    auto pbSD = new PbSD("PbSD");
+
+    sdMan->AddNewDetector(pbSD);
+    
+    fLogicPb->SetSensitiveDetector(pbSD);
     
 }

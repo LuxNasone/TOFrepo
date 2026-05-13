@@ -365,6 +365,8 @@ CMakeFiles/TOF_MC.dir/src/DetectorConstruction.cc.o: \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/globals.hh \
+ /home/lux_n/TOFrepo/TOF_MC/include/PbSD.hh \
+ /home/lux_n/geant4/geant4-install/include/Geant4/G4Step.hh \
  /home/lux_n/TOFrepo/TOF_MC/include/EventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4UserEventAction.hh \
  /home/lux_n/geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
